@@ -1,0 +1,97 @@
+{
+  "platform": "macos",
+  "mode": "operate",
+  "surface": "native-menu-bar",
+  "tokens": {
+    "font": "NSFont.systemFont",
+    "foreground": "NSColor.labelColor",
+    "secondary": "NSColor.secondaryLabelColor",
+    "menuIconPoints": 18,
+    "sliderRowWidthPoints": 264,
+    "sliderRowHeightPoints": 62,
+    "sliderRowWithEndpointsHeightPoints": 78,
+    "sliderInsetPoints": 16,
+    "sliderControlInsetPoints": 14,
+    "sliderControlWidthPoints": 236,
+    "bodyFontPoints": 13,
+    "headerFontWeight": "semibold",
+    "valueFontPoints": 12,
+    "valueFont": "NSFont.monospacedDigitSystemFont",
+    "endpointFontPoints": 10,
+    "menuIconWithBatteryWidthPoints": 28,
+    "menuIconHeightPoints": 18,
+    "batteryBarWidthPoints": 4,
+    "batteryBarHeightPoints": 14,
+    "batteryBarOriginXPoints": 23,
+    "batteryBarOriginYPoints": 2,
+    "batteryBarCornerRadiusPoints": 2,
+    "batteryTrackAlpha": 0.25,
+    "batteryUnknownAlpha": 0.6,
+    "batteryUnknownDashHeightPoints": 1
+  },
+  "components": [
+    "NSStatusItem",
+    "NSMenu",
+    "NSMenuItem",
+    "NSSlider"
+  ],
+  "appearance": "system light/dark",
+  "buildPath": "code",
+  "validation": {
+    "scope": "Final source and rendered documentation previews",
+    "sources": [
+      "Sources/App.swift",
+      "Sources/StatusIcon.swift",
+      "Sources/EQPresets.swift",
+      "Sources/DemoRenderer.swift",
+      "docs/images",
+      "scripts/assets/demo-style.json"
+    ],
+    "documentationPreviewsVerified": true,
+    "renderedMenuVerified": false,
+    "newHardwareBehaviorVerified": false,
+    "finishReview": "Scoped ship after all four flagged fixes were resolved.",
+    "limitation": "Rendered previews verify control content and artwork composition. The actual desktop menu, runtime placement, system light/dark appearance, assistive-technology behavior and new hardware behavior were not visually tested."
+  },
+  "statusIcon": {
+    "source": "Sources/StatusIcon.swift",
+    "template": true,
+    "batteryBarDefault": "on",
+    "preference": "Settings > Show battery bar",
+    "fillDirection": "bottom to top",
+    "unknownBattery": "horizontal dash",
+    "exactPercentage": [
+      "menu header",
+      "status-item tooltip",
+      "accessibility label"
+    ]
+  },
+  "equalizer": {
+    "source": "Sources/EQPresets.swift",
+    "presetCount": 6,
+    "attribution": "Three published recommendations, two Bose Bar starting points and Flat; details in docs/eq-presets.md.",
+    "presentation": "Native submenu with Bass / Mid / Treble values, actual-value checkmarks, description/source tooltips and a guide link.",
+    "selection": "Named matching preset or Custom; presets outside reported band ranges are disabled.",
+    "undo": "One-level Undo last preset, available when a previous EQ snapshot exists.",
+    "verification": "Serial writes with complete readback and attempted restore on failure; no automatic preset application."
+  },
+  "documentationArtwork": {
+    "path": "docs/images",
+    "styleSource": "scripts/assets/demo-style.json",
+    "paletteSource": "https://github.com/daveearley/screenshot.rocks/blob/main/src/data/presets.ts",
+    "license": "MIT; docs/licenses/screenshot-rocks.txt",
+    "palette": {
+      "sage": "#dbe5dc",
+      "midnight": "#15171b",
+      "darkType": "#17352b",
+      "lightType": "#edf4ec"
+    },
+    "sizePixels": {
+      "width": 1600,
+      "height": 1000
+    },
+    "label": "Rendered preview",
+    "data": "Synthetic demo data; no Bluetooth access or private device identifiers.",
+    "runtime": "Documentation presentation only; the application retains native AppKit colors and controls."
+  }
+}

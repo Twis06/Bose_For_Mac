@@ -1,0 +1,6 @@
+build/
+dist/
+.DS_Store
+*.log
+docs/images/.foreground.png
+docs/images/.shadow.png

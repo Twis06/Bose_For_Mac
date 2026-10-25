@@ -1,0 +1,6 @@
+{
+  "source": "https://github.com/daveearley/screenshot.rocks/blob/main/src/data/presets.ts",
+  "license": "MIT (docs/licenses/screenshot-rocks.txt)",
+  "sage": { "width": 1600, "height": 1000, "background": "#dbe5dc", "shadow": 24 },
+  "midnight": { "width": 1600, "height": 1000, "background": "#15171b", "shadow": 24 }
+}

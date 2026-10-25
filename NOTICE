@@ -1,0 +1,15 @@
+Bose Bar / Bose for Mac
+Copyright (c) 2026 Twis06
+
+BMAP packet framing, payload formats and macOS connection approach are adapted
+from aaronsb/bosectl, Copyright (c) 2026 Aaron Bockelie, MIT License.
+https://github.com/aaronsb/bosectl
+Reference revision: 70570b29c1d3c9ba775b08a29eaea72385de27b5
+The complete MIT permission notice is included in LICENSE.
+
+EQ recommendations are credited individually in docs/eq-presets.md. They are
+listening preferences, not endorsements or exact measurement-based correction.
+
+This is an independent community project, not affiliated with or endorsed by
+Bose Corporation or Apple Inc. Bose and QuietComfort are their respective
+owners' trademarks. No Bose product photography or logo is redistributed.

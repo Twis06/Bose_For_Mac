@@ -15,7 +15,7 @@ def run(*args):
     subprocess.run([str(a) for a in args], check=True)
 
 def text(x, y, message, size=32, weight=400, color="#17352b", anchor="start"):
-    return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="Helvetica" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(message)}</text>'
+    return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="Avenir Next" font-style="normal" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(message)}</text>'
 
 def plate(name, theme, elements, height=1000):
     spec = STYLE[theme]

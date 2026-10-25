@@ -103,6 +103,7 @@
     "label": "Rendered preview",
     "data": "Synthetic demo data; no Bluetooth access or private device identifiers.",
     "runtime": "Documentation presentation only; the application retains native AppKit colors and controls.",
-    "composition": "Centered native UI, one short title and a small Demo label; no marketing body copy."
+    "composition": "Centered native UI, one short title and a small Demo label; no marketing body copy.",
+    "font": "Avenir Next: Medium titles, Regular captions; native UI retains system type."
   }
 }

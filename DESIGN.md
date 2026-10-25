@@ -26,7 +26,7 @@ Labels use Bose's actual mode names. The noise-cancellation slider, when support
 
 ### Documentation artwork
 
-Sage (#dbe5dc) and Midnight (#15171b) presentation backgrounds adapt Screenshot.rocks MIT presets. Type is dark green (#17352b) or pale neutral (#edf4ec). Use 1600 × 1000 compositions, soft offset shadows and explicitly labeled rendered previews. Public images contain synthetic device values, never private identifiers. ImageMagick is a build-time art tool only. These presentation colors do not replace native AppKit colors in the application.
+Sage (#dbe5dc) and Midnight (#15171b) presentation backgrounds adapt Screenshot.rocks MIT presets. Type is dark green (#17352b) or pale neutral (#edf4ec). Use centered, UI-first compositions: one short title and a small Demo label, without marketing paragraphs or feature lists. Main and EQ images are 1600 × 1000; the battery detail is 1600 × 640. Keep soft offset shadows and generous whitespace. Public images contain synthetic device values, never private identifiers. ImageMagick is a build-time art tool only. These presentation colors do not replace native AppKit colors in the application.
 
 ## Do's and Don'ts
 

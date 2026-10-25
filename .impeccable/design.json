@@ -87,11 +87,22 @@
       "lightType": "#edf4ec"
     },
     "sizePixels": {
-      "width": 1600,
-      "height": 1000
+      "hero": {
+        "width": 1600,
+        "height": 1000
+      },
+      "equalizer": {
+        "width": 1600,
+        "height": 1000
+      },
+      "battery": {
+        "width": 1600,
+        "height": 640
+      }
     },
     "label": "Rendered preview",
     "data": "Synthetic demo data; no Bluetooth access or private device identifiers.",
-    "runtime": "Documentation presentation only; the application retains native AppKit colors and controls."
+    "runtime": "Documentation presentation only; the application retains native AppKit colors and controls.",
+    "composition": "Centered native UI, one short title and a small Demo label; no marketing body copy."
   }
 }

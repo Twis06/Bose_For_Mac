@@ -14,13 +14,13 @@ STYLE = json.loads((ROOT / "scripts/assets/demo-style.json").read_text())
 def run(*args):
     subprocess.run([str(a) for a in args], check=True)
 
-def text(x, y, message, size=32, weight=400, color="#17352b"):
-    return f'<text x="{x}" y="{y}" font-family="Helvetica" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(message)}</text>'
+def text(x, y, message, size=32, weight=400, color="#17352b", anchor="start"):
+    return f'<text x="{x}" y="{y}" text-anchor="{anchor}" font-family="Helvetica" font-size="{size}" font-weight="{weight}" fill="{color}">{html.escape(message)}</text>'
 
-def plate(name, theme, elements):
+def plate(name, theme, elements, height=1000):
     spec = STYLE[theme]
     source = OUT / f"{name}.svg"
-    source.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000"><rect width="1600" height="1000" fill="{spec["background"]}"/>' + ''.join(elements) + '</svg>')
+    source.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="{height}"><rect width="1600" height="{height}" fill="{spec["background"]}"/>' + ''.join(elements) + '</svg>')
     target = OUT / f"{name}.png"
     run("magick", "-background", "none", source, target)
     return target
@@ -34,42 +34,24 @@ def place(canvas, source, width, x, y):
     run("magick", canvas, shadow, "-geometry", f"+{x-48}+{y-32}", "-composite", canvas)
     resized.unlink(); shadow.unlink()
 
+# Product-first: one short heading, centered native UI, one honest demo label.
 hero = plate("hero", "sage", [
-    text(104, 192, "Bose Bar", 88, 700),
-    text(108, 294, "Your headphones.", 56, 500),
-    text(108, 364, "Within reach.", 56, 500),
-    text(110, 458, "Modes, EQ and battery", 30),
-    text(110, 502, "from a tiny native Mac menu.", 30),
-    text(110, 760, "Local Bluetooth. No account.", 26),
-    text(110, 804, "Free & open source.", 26),
-    text(110, 936, "macOS 13+  /  Apple silicon + Intel", 20),
-    text(958, 936, "Rendered app preview · Example values", 18)
+    text(800, 126, "Bose Bar", 48, 500, anchor="middle"),
+    text(800, 936, "Demo", 16, color="#566b5d", anchor="middle")
 ])
-place(hero, RAW / "menu-light.png", 500, 982, 206)
+place(hero, RAW / "menu-light.png", 500, 550, 220)
 
 eq = plate("equalizer", "midnight", [
-    text(104, 166, "Find your sound.", 68, 700, "#edf4ec"),
-    text(108, 250, "Three bands. Six starting points.", 30, color="#c4d2c7"),
-    text(108, 294, "Fine-tune, apply, undo.", 30, color="#c4d2c7"),
-    text(108, 456, "Vocal clarity", 30, 700, "#c1e9b2"),
-    text(108, 502, "Bass −6   /   Mid +4   /   Treble +2", 27, color="#edf4ec"),
-    text(108, 546, "RecordingNow V1 · source linked in the app", 20, color="#aebcb1"),
-    text(108, 710, "Every preset shows its values.", 25, color="#c4d2c7"),
-    text(108, 754, "Your last EQ is one undo away.", 25, color="#c4d2c7"),
-    text(108, 936, "Bose Bar  /  Bose_For_Mac", 20, color="#aebcb1"),
-    text(958, 936, "Rendered app preview · Example values", 18, color="#aebcb1")
+    text(800, 110, "Equalizer", 48, 500, "#edf4ec", anchor="middle"),
+    text(800, 950, "Demo", 16, color="#aebcb1", anchor="middle")
 ])
-place(eq, RAW / "equalizer-dark.png", 522, 970, 110)
+place(eq, RAW / "equalizer-dark.png", 500, 550, 170)
 
 battery = plate("battery", "sage", [
-    text(104, 164, "A little bar. One less number.", 66, 700),
-    text(108, 252, "Battery at a glance, without crowding your menu bar.", 30),
-    text(108, 684, "Fills from the bottom as charge increases.", 28),
-    text(108, 734, "The exact percentage stays in the menu and tooltip.", 28),
-    text(108, 936, "Bose Bar  /  Optional vertical battery indicator", 20),
-    text(1050, 936, "Rendered demo · 100 / 60 / 15%", 18)
-])
-place(battery, RAW / "battery-light.png", 1120, 240, 358)
+    text(800, 138, "Battery", 48, 500, anchor="middle"),
+    text(800, 586, "Demo", 16, color="#566b5d", anchor="middle")
+], height=640)
+place(battery, RAW / "battery-light.png", 880, 360, 250)
 
 if "--skip-icon" in sys.argv:
     print("Created hero.png, equalizer.png and battery.png")
